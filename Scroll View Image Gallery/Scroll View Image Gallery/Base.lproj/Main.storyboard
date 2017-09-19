@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,32 +15,48 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="Xdh-vh-paP"/>
+                        <viewControllerLayoutGuide type="bottom" id="oDT-2T-nR1"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="cBP-xX-Ajd">
+                        <rect key="frame" x="0.0" y="0.0" width="1125" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sc9-GH-Gyt">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="chicago" translatesAutoresizingMaskIntoConstraints="NO" id="Hps-QO-ZYU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </scrollView>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="cUa-YL-zo7"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toronto" translatesAutoresizingMaskIntoConstraints="NO" id="XhK-50-b2p">
+                                <rect key="frame" x="750" y="0.0" width="375" height="710"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="montreal" translatesAutoresizingMaskIntoConstraints="NO" id="EEr-IS-KpQ">
+                                <rect key="frame" x="375" y="0.0" width="375" height="667"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Sc9-GH-Gyt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ArF-ls-Yed"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Sc9-GH-Gyt" secondAttribute="bottom" id="LrG-PY-Vb4"/>
-                            <constraint firstAttribute="trailing" secondItem="Sc9-GH-Gyt" secondAttribute="trailing" id="S5v-Fy-fTh"/>
-                            <constraint firstItem="Sc9-GH-Gyt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wYf-IC-aYe"/>
+                            <constraint firstItem="Hps-QO-ZYU" firstAttribute="leading" secondItem="cBP-xX-Ajd" secondAttribute="leading" id="3wb-0g-3kT"/>
+                            <constraint firstItem="oDT-2T-nR1" firstAttribute="top" secondItem="XhK-50-b2p" secondAttribute="bottom" id="RW1-TY-kiZ"/>
+                            <constraint firstAttribute="trailing" secondItem="XhK-50-b2p" secondAttribute="trailing" id="TLt-HF-tpn"/>
+                            <constraint firstItem="XhK-50-b2p" firstAttribute="leading" secondItem="EEr-IS-KpQ" secondAttribute="trailing" id="Vax-ea-Y7A"/>
+                            <constraint firstItem="EEr-IS-KpQ" firstAttribute="leading" secondItem="Hps-QO-ZYU" secondAttribute="trailing" id="W3w-hy-4EP"/>
+                            <constraint firstItem="EEr-IS-KpQ" firstAttribute="width" secondItem="Hps-QO-ZYU" secondAttribute="width" id="aZg-Mb-Mas"/>
+                            <constraint firstItem="XhK-50-b2p" firstAttribute="width" secondItem="Hps-QO-ZYU" secondAttribute="width" id="mKD-4N-qdW"/>
+                            <constraint firstItem="XhK-50-b2p" firstAttribute="top" secondItem="cBP-xX-Ajd" secondAttribute="topMargin" id="uKa-oE-zuw"/>
                         </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="scrollViewOutlet" destination="Sc9-GH-Gyt" id="cGd-fE-Jbo"/>
-                    </connections>
+                    </scrollView>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="1125" height="667"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chicago" width="1800" height="1200"/>
+        <image name="montreal" width="1920" height="1080"/>
+        <image name="toronto" width="1680" height="710"/>
+    </resources>
 </document>
