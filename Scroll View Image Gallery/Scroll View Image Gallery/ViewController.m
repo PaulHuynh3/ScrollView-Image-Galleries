@@ -19,11 +19,8 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
-//    [super viewDidLoad];
-//    [self createPictures];
-//    [self setUpLayout];
-//    
-//    
+    [super viewDidLoad];
+
 }
 //
 //-(void)createPictures{

@@ -18,7 +18,7 @@
                         <viewControllerLayoutGuide type="top" id="Xdh-vh-paP"/>
                         <viewControllerLayoutGuide type="bottom" id="oDT-2T-nR1"/>
                     </layoutGuides>
-                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="cBP-xX-Ajd">
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" id="cBP-xX-Ajd">
                         <rect key="frame" x="0.0" y="0.0" width="1125" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
