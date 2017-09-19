@@ -13,6 +13,8 @@
 @property (nonatomic) UIImageView *firstPicture;
 @property (nonatomic) UIImageView *secondPicture;
 @property (nonatomic) UIImageView *thirdPicture;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+
 
 @end
 
@@ -20,8 +22,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self updatePageControl];
+    
+    
 
 }
+
+
+/*
+ Add a UIPageControl to the root view of the view controller you made in part 1.
+ Using the UIScrollViewDelegate method scrollViewDidScroll:, set the currentPage property to the correct page index as the user scrolls.
+ 
+ */
+
+- (void)updatePageControl {
+    CGFloat width = self.view.frame.size.width;
+    CGFloat xOffset = self.scrollViewOutlet.contentOffset.x;
+    NSInteger pageNumber = xOffset / width;
+    self.pageControl.currentPage = pageNumber;
+}
+
+
+
 //
 //-(void)createPictures{
 //

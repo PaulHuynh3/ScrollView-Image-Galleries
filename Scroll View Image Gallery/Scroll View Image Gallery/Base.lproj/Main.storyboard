@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="IiG-dM-BKG">
             <objects>
-                <viewController id="lBs-8p-hDW" sceneMemberID="viewController">
+                <viewController id="lBs-8p-hDW" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4tt-Cu-rQc"/>
                         <viewControllerLayoutGuide type="bottom" id="6o6-uN-NLD"/>
@@ -24,6 +24,13 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4a-OT-jUI">
                                 <rect key="frame" x="0.0" y="20" width="1125" height="647"/>
                                 <subviews>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="vMO-Zf-vmu">
+                                        <rect key="frame" x="543" y="305" width="39" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="pageControl:" destination="lBs-8p-hDW" eventType="valueChanged" id="Bhh-A4-CsY"/>
+                                        </connections>
+                                    </pageControl>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chicago" translatesAutoresizingMaskIntoConstraints="NO" id="hp3-mg-3SZ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <constraints>
@@ -68,6 +75,9 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1125" height="667"/>
+                    <connections>
+                        <outlet property="pageControl" destination="vMO-Zf-vmu" id="wAZ-7F-BcO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aso-4H-578" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
