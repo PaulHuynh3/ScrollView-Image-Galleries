@@ -22,10 +22,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self updatePageControl];
+    [self createPageControl];
+    self.scrollViewOutlet.pagingEnabled = YES;
     
-    
-
 }
 
 
@@ -35,13 +34,33 @@
  
  */
 
+
+#define pageControlHeight 20.0
+
+- (void)createPageControl {
+    CGRect frame = CGRectMake(0.0, self.view.frame.size.height - pageControlHeight, self.view.frame.size.width, pageControlHeight);
+    
+    self.pageControl = [[UIPageControl alloc] initWithFrame:frame];
+    [self.view addSubview:self.pageControl];
+    self.pageControl.layer.zPosition = 2;
+    self.pageControl.numberOfPages = 2;
+    self.pageControl.backgroundColor = [UIColor blackColor];
+    self.pageControl.alpha = 0.5;
+}
+
+
+#pragma mark - ScrollViewDelegate
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [self updatePageControl];
+}
+
 - (void)updatePageControl {
     CGFloat width = self.view.frame.size.width;
     CGFloat xOffset = self.scrollViewOutlet.contentOffset.x;
     NSInteger pageNumber = xOffset / width;
     self.pageControl.currentPage = pageNumber;
 }
-
 
 
 //
